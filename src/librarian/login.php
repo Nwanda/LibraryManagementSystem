@@ -2,6 +2,7 @@
 session_start();
 include "dbconfig.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@ include "dbconfig.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>User Login Form | LMS </title>
+    <title>Librarian Login Form | LMS </title>
 
     <!-- Bootstrap -->
     <link href="../css/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +35,7 @@ include "dbconfig.php";
 
     <section class="login_content">
         <form name="form1" action="" method="post">
-            <h1>User Login Form</h1>
+            <h1>Librarian Login Form</h1>
 
             <div>
                 <input type="text" name="Username" class="form-control" placeholder="Username" required=""/>
@@ -65,14 +66,13 @@ include "dbconfig.php";
 
 
 </div>
-
 <?php
 if(isset($_POST["submit1"]))
 {
     $count=0;
-    $res=mysqli_query($link,"select * from user_registration where Username='$_POST[Username]' && Password='$_POST[Password]' && Status='yes'");
+    $res=mysqli_query($link,"select * from librarian_registration where Username='$_POST[Username]' && Password='$_POST[Password]'");
     $count=mysqli_num_rows($res);
-    //echo $count;
+    echo $count;
 
     if($count==0)
     {
@@ -83,20 +83,17 @@ if(isset($_POST["submit1"]))
         <?php
     }
     else{
-
-        $_SESSION["Username"]=$_POST["Username"];
+        $_SESSION["librarian"]=$_POST["Username"];
             ?>
                 <script type="text/javascript">
-                    window.location="my_issued_books.php";
+                    window.location="display_student_info.php";
                 </script>
             <?php
     }
 }
 
+
 ?>
-
-
-
 
 </body>
 </html>

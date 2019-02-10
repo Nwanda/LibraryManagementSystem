@@ -12,11 +12,12 @@ include "dbconfig.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Student Registration Form | LMS </title>
+    <title>User Registration Form | LMS </title>
 
     <link href="../css/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/css/animate.min.css" rel="stylesheet">
     <link href="../css/css/custom.min.css" rel="stylesheet">
+    <link href="/css/css/animate.min.css" rel="stylesheet">
+    
 </head>
 
 <br>
@@ -64,6 +65,9 @@ include "dbconfig.php";
                     <div>
                         <input type="text" class="form-control" placeholder="Gender" name="Gender" required=""/>
                     </div>
+                    <div>
+                        <input type="text" class="form-control" placeholder="User Number" name="user_number" required=""/>
+                    </div>
                     <div class="col-lg-12  col-lg-push-3">
                         <input class="btn btn-default submit " type="submit" name="submit1" value="Register">
                     </div>
@@ -74,7 +78,7 @@ include "dbconfig.php";
 if(isset($_POST["submit1"]))
 {
     
-    mysqli_query($link,"insert into user_registration values('','$_POST[FirstName]','$_POST[LastName]','$_POST[Username]','$_POST[Password]','$_POST[DateOfBirth]','$_POST[Email]','$_POST[Telephone]','$_POST[Address]','$_POST[Gender]')");
+    mysqli_query($link,"insert into user_registration values('','$_POST[FirstName]','$_POST[LastName]','$_POST[Username]','$_POST[Password]','$_POST[DateOfBirth]','$_POST[Email]','$_POST[Telephone]','$_POST[Address]','$_POST[Gender]','no','$_POST[user_number]')");
 ?>
  <div class="alert alert-success col-lg-6 col-lg-push-3">
         Registration successfully, You will get email when your account is approved
