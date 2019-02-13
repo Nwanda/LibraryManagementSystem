@@ -88,7 +88,7 @@ if(isset($_POST["submit1"]))
     
             ?>
                 <script type="text/javascript">
-                    window.location="display_student_info.php";
+                    window.location="librarian_home_page.php";
                 </script>
             <?php
     }

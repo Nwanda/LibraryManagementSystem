@@ -78,6 +78,19 @@ $tot=mysqli_num_rows($res);
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
+
+                            <li><a href="my_issued_books.php"><i class="fa fa-bar-chart-o"></i> Issued books<span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+                            <li><a href="search_books.php"><i class="fa fa-bar-chart-o"></i> Search Books<span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+                            <li><a href="message_from_librarian.php"><i class="fa fa-bar-chart-o"></i> Messages<span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
  
                             <li class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>

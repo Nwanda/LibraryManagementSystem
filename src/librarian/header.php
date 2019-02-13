@@ -63,13 +63,43 @@ echo   $_SESSION["librarian"];
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-table"></i> Tables 
+                            <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
+                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation 
+                            <span
                                     class="fa fa-chevron-down"></span></a>
-
                             </li>
+                            <li><a href="add_books.php"><i class="fa fa-bar-chart-o"></i> Add New Books
+                            <span
+                                    class="fa fa-chevron-down"></span></a>
+                            </li>
+
+                            <li><a href="display_books.php"><i class="fa fa-bar-chart-o"></i> Display Books
+                            <span
+                                    class="fa fa-chevron-down"></span></a>
+                            </li>
+                            <li><a href="issue_books.php"><i class="fa fa-bar-chart-o"></i> Issue Books
+                            <span
+                                    class="fa fa-chevron-down"></span></a>
+                            </li>
+                            <li><a href="returned_books.php"><i class="fa fa-bar-chart-o"></i> Return Books
+                            <span
+                                    class="fa fa-chevron-down"></span></a>
+                            </li>
+                         
+                         
+                            <li><a href="send_msg_user.php"> <i class="fa fa-bar-chart-o"></i> Send Message
+                            <span class="fa fa-chevron-down"></span></a>
+                            </li>
+
+                            <li><a href="display_student_info.php"> <i class="fa fa-bar-chart-o"></i> User Details
+                            <span class="fa fa-chevron-down"></span></a>
+                            </li>
+                           
+                           
+                         
 
 
                             

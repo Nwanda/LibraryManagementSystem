@@ -87,7 +87,7 @@ if(isset($_POST["submit1"]))
         $_SESSION["Username"]=$_POST["Username"];
             ?>
                 <script type="text/javascript">
-                    window.location="my_issued_books.php";
+                    window.location="user_home_page.php";
                 </script>
             <?php
     }
