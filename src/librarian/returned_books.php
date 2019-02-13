@@ -1,4 +1,14 @@
 <?php
+session_start();
+//check if librarian is logged in, if not direct them to login page
+if(!isset($_SESSION["librarian"]))
+{
+    ?>
+<script type="text/javascript">
+window.location="login.php";
+</script>
+    <?php
+}
 include "dbconfig.php";
 include "header.php";
 ?>
@@ -50,12 +60,7 @@ while($row=mysqli_fetch_array($res))
 
     echo "</option>";
 }
-
 ?>
-
-
-
-
 
                                             </select>
                                         </td>
@@ -66,6 +71,43 @@ while($row=mysqli_fetch_array($res))
                                 
                                 </table>
                                 </form>
+
+<?php
+if(isset($_POST["submit1"])){
+    $res=mysqli_query($link,"select * from issue_books where user_number='$_POST[user_number]' ");
+echo "<table class=table table-bordered>";
+echo "<tr>";
+    echo "<th>"; echo "user number"; echo "</th>";
+    echo "<th>"; echo "First Name"; echo "</th>";
+    echo "<th>"; echo "Last number"; echo "</th>";
+    echo "<th>"; echo "Username"; echo "</th>";
+    echo "<th>"; echo "Telephone"; echo "</th>";
+    echo "<th>"; echo "Email"; echo "</th>";
+    echo "<th>"; echo "Book name"; echo "</th>";
+    echo "<th>"; echo "Issue date"; echo "</th>";
+    echo "<th>"; echo "return book"; echo "</th>";
+
+echo "</tr>";
+
+    while($row=mysqli_fetch_array($res)){
+        echo "<tr>";
+        echo "<td>"; echo $row["user_number"]; echo "</td>";
+        echo "<td>"; echo $row["FirstName"]; echo "</td>";
+        echo "<td>"; echo $row["LastName"]; echo "</td>";
+        echo "<td>"; echo $row["Username"]; echo "</td>";
+        echo "<td>"; echo $row["Telephone"]; echo "</td>";
+        echo "<td>"; echo $row["Email"]; echo "</td>";
+        echo "<td>"; echo $row["book_name"]; echo "</td>";
+        echo "<td>"; echo $row["issue_date"]; echo "</td>";
+        echo "<td>"; ?> <a href="return_book.php?id=<?php  echo $row["issue_id"];?>">Return book</a> <?php echo "</td>";
+     
+        echo "</tr>";
+}
+echo "</table>";
+}
+
+?>
+
                             </div>
                         </div>
                     </div>

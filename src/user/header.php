@@ -1,3 +1,12 @@
+<?php
+include "dbconfig.php";
+$tot=0;
+$res=mysqli_query($link,"select * from lib_messages where dest_username='$_SESSION[Username]' && read_1='n'");
+$tot=mysqli_num_rows($res);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +44,11 @@
                     <div class="profile_info">
                         <span>Welcome,</span>
 
-                        <h2>John Doe</h2>
+                        <h2>
+                        <?php
+                                 echo  $_SESSION["Username"];
+                                ?>
+                        </h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -65,6 +78,11 @@
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
+ 
+                            <li class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+</li>
+
 
                         </ul>
                     </div>
@@ -87,19 +105,34 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../assets/images/img.jpg" alt="">John Doe
+                                <img src="../assets/images/img.jpg" alt="">
+                                <?php
+                                 echo  $_SESSION["Username"];
+                                ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
+
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
+
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
 
+
+
+
                         <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                            <a href="message_from_librarian.php" class="dropdown-toggle info-number" data-toggle="dropdown"
                                aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
+                                <span class="badge bg-green" onclick="window.location='message_from_librarian.php';">
+                                <!-- this part display the number of notifications-->
+                                <?php echo $tot;?>
+                                
+                                </span>
                             </a>
 
                         </li>
@@ -108,3 +141,9 @@
             </div>
         </div>
         <!-- /top navigation -->
+
+
+
+
+
+      

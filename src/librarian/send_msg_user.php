@@ -9,6 +9,7 @@ window.location="login.php";
 </script>
     <?php
 }
+include "dbconfig.php";
 include "header.php";
 ?>
         <!-- page content area main -->
@@ -36,12 +37,54 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Plain Page</h2>
+                                <h2>Send Message to user</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                Add content to the page ...
+                             
+                            <form name="form" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                    <select class="form-control" name="dest_user">
+                                    
+                                    <?php
+$res=mysqli_query($link,"select * from user_registration");
+while($row=mysqli_fetch_array($res)){
+
+   ?><option value="<?php echo $row["Username"]?>">
+<?php
+echo $row["Username"]."(".$row["user_number"].")";
+?>
+
+   </option><?php
+}
+
+
+                                    ?>
+                                    
+                                    </select>
+                                    </td>
+                                </tr>
+<tr>
+<td> <input type="text" class="form-control" name="subject" placeholder="Enter subject"></td>
+</tr>
+<tr>
+<td>  <textarea name="msg" class="form-control" placeholder="enter message" cols="30" rows="10"></textarea>  </td>
+</tr>
+<tr>
+<td><input type="submit" name="submit1" value="send message">  </td>
+
+</tr>
+
+
+                                </table>
+                                </form>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -49,7 +92,21 @@ include "header.php";
             </div>
         </div>
         <!-- /page content -->
+<?php
+if(isset($_POST["submit1"]))
+{
+mysqli_query($link,"insert into lib_messages values('','$_SESSION[librarian]','$_POST[dest_user]','$_POST[subject]','$_POST[msg]','n')") or die(mysqli_error($link)) ;
+?>
 
+<script type="text/javascript">
+alert("message sent succesfully");
+</script>
+<?php
+
+}
+
+?>
 <?php
 include "footer.php";
 ?>
+

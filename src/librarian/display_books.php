@@ -1,5 +1,6 @@
 <?php
 session_start();
+//check if librarian is logged in, if not direct them to login page
 if(!isset($_SESSION["librarian"]))
 {
     ?>
@@ -70,6 +71,7 @@ if(isset($_POST["submit1"]))
     echo "<th>"; echo "Purchase Date"; echo "</th>";
     echo "<th>"; echo "Price"; echo "</th>";
     echo "<th>"; echo "Quantity"; echo "</th>";
+    echo "<th>"; echo "Delete books"; echo "</th>";
     echo "</tr>";
     
     while($row=mysqli_fetch_array($res)){
@@ -84,6 +86,11 @@ if(isset($_POST["submit1"]))
         echo "<td>"; echo $row["purchase_date"]; echo "</td>";
         echo "<td>"; echo $row["book_price"]; echo "</td>";
         echo "<td>"; echo $row["book_qty"]; echo "</td>";
+        echo "<td>"; 
+        ?>
+    <a href="delete_books.php?id=<?php echo $row["book_id"];  ?>">Delete books </a>
+        <?php
+        echo "</td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -104,6 +111,7 @@ echo "<th>"; echo "Publish Date"; echo "</th>";
 echo "<th>"; echo "Purchase Date"; echo "</th>";
 echo "<th>"; echo "Price"; echo "</th>";
 echo "<th>"; echo "Quantity"; echo "</th>";
+echo "<th>"; echo "Delete books"; echo "</th>";
 echo "</tr>";
 
 while($row=mysqli_fetch_array($res)){
@@ -118,6 +126,11 @@ while($row=mysqli_fetch_array($res)){
     echo "<td>"; echo $row["purchase_date"]; echo "</td>";
     echo "<td>"; echo $row["book_price"]; echo "</td>";
     echo "<td>"; echo $row["book_qty"]; echo "</td>";
+    echo "<td>"; 
+    ?>
+<a href="delete_books.php?id=<?php echo $row["book_id"];  ?>">Delete books </a>
+    <?php
+    echo "</td>";
     echo "</tr>";
 }
 echo "</table>";

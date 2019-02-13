@@ -1,5 +1,14 @@
 <?php
 session_start();
+//check if librarian is logged in, if not direct them to login page
+if(!isset($_SESSION["librarian"]))
+{
+    ?>
+<script type="text/javascript">
+window.location="login.php";
+</script>
+    <?php
+}
 include "dbconfig.php";
 include "header.php";
 ?>
@@ -161,7 +170,26 @@ while($row=mysqli_fetch_array($res))
 
 if(isset($_POST["submit2"]))
 {
+$quantity=0;
+$res=mysqli_query($link,"select * from add_books where title='$_POST[booksname]'");
+while($row=mysqli_fetch_array($res))
+{
+$quantity=$row["book_qty"];
+}
+if($quantity==0){
+    ?>
+    <div class="alert alert-danger col-lg-6 col-lg-push-3">
+        <strong style="color:white">This book is not available in stock</strong>
+    </div>
+<?php
+}
+else{
+
     mysqli_query($link,"insert into issue_books values ('','$_SESSION[user_number]','$_POST[FirstName]','$_POST[LastName]','$_SESSION[U_username]','$_POST[Telephone]','$_POST[Email]','$_POST[booksname]','$_POST[issue_date]','') ");
+    //reduce total number of books once a book is issued out
+    mysqli_query($link,"update add_books set book_qty=book_qty-1 where title='$_POST[booksname]'");
+    // end of reducing total number of books once a book is issued out
+
 ?>
 
 <script type="text/javascript">
@@ -169,7 +197,7 @@ alert("book issues succesfully");
 window.location.href=window.location.href;
 </script>
 <?php
-
+}
 }
 
 

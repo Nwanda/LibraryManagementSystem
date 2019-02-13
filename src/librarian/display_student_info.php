@@ -1,4 +1,14 @@
 <?php
+session_start();
+//check if librarian is logged in, if not direct them to login page
+if(!isset($_SESSION["librarian"]))
+{
+    ?>
+<script type="text/javascript">
+window.location="login.php";
+</script>
+    <?php
+}
 include "header.php";
 include "dbconfig.php";
 ?>

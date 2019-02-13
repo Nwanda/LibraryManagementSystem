@@ -1,5 +1,14 @@
 <?php
 session_start();
+//check if user is logged in, if not direct them to login page
+if(!isset($_SESSION["Username"]))
+{
+    ?>
+<script type="text/javascript">
+window.location="login.php";
+</script>
+    <?php
+}
 include "dbconfig.php";
 include "header.php";
 ?>
@@ -68,8 +77,6 @@ include "header.php";
     </table>
 
 <?php
-echo "my session name is ";
-    echo $_SESSION['Username'];
 
 ?>
 
