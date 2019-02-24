@@ -34,12 +34,12 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        
+
 
                         <h2>
                         <?php
-echo   $_SESSION["librarian"];
-                        ?>
+echo $_SESSION["librarian"];
+?>
                         </h2>
                     </div>
                     <div class="clearfix"></div>
@@ -53,24 +53,7 @@ echo   $_SESSION["librarian"];
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
 
-                            </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
-                                    class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-table"></i> Tables 
-                            <span class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation 
-                            <span
-                                    class="fa fa-chevron-down"></span></a>
-                            </li>
                             <li><a href="add_books.php"><i class="fa fa-bar-chart-o"></i> Add New Books
                             <span
                                     class="fa fa-chevron-down"></span></a>
@@ -88,8 +71,8 @@ echo   $_SESSION["librarian"];
                             <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                         
-                         
+
+
                             <li><a href="send_msg_user.php"> <i class="fa fa-bar-chart-o"></i> Send Message
                             <span class="fa fa-chevron-down"></span></a>
                             </li>
@@ -97,12 +80,15 @@ echo   $_SESSION["librarian"];
                             <li><a href="display_student_info.php"> <i class="fa fa-bar-chart-o"></i> User Details
                             <span class="fa fa-chevron-down"></span></a>
                             </li>
-                           
-                           
-                         
 
 
-                            
+                            <li><a href=""><i class="fa fa-bar-chart-o"></i> My Profile<span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+
+
+
                             <li class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 </li>
@@ -130,11 +116,11 @@ echo   $_SESSION["librarian"];
                                aria-expanded="false">
                                 <img src="../assets/images/img.jpg" alt="">
                                 <?php
-                                 echo $_SESSION["librarian"];
-                                ?>
+echo $_SESSION["librarian"];
+?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
-                            
+
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>

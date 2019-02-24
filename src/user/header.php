@@ -61,23 +61,7 @@ echo $_SESSION["Username"];
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
 
-                            </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
-                                    class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-
-                            </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
-                                    class="fa fa-chevron-down"></span></a>
-
-                            </li>
 
                             <li><a href="my_issued_books.php"><i class="fa fa-bar-chart-o"></i> Issued books<span
                                     class="fa fa-chevron-down"></span></a>
@@ -92,11 +76,15 @@ echo $_SESSION["Username"];
 
                             </li>
 
+                          
+                            <li><a href=""><i class="fa fa-bar-chart-o"></i>My  Profile<span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+
                             <li class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-</li>
-
-
+                            </li>
                         </ul>
                     </div>
 
