@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if librarian is logged in, if not direct them to login page
-if(!isset($_SESSION["librarian"]))
-{
+if (!isset($_SESSION["librarian"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";
@@ -44,46 +43,86 @@ include "dbconfig.php";
                             </div>
                             <div class="x_content">
                               <?php
-$res=mysqli_query($link,"select *from user_registration");
-echo "<table class='table table-bordered'>";//display record in table format
+$res = mysqli_query($link, "select *from user_registration");
+echo "<table class='table table-bordered'>"; //display record in table format
 echo "<tr>";
-echo "<th>"; echo "Firstname"; echo "</th>";//for heading
-echo "<th>"; echo "Lastname"; echo "</th>";
-echo "<th>"; echo "Username"; echo "</th>";
-echo "<th>"; echo "user_number"; echo "</th>";
-echo "<th>"; echo "DateOfBirth"; echo "</th>";
-echo "<th>"; echo "Email"; echo "</th>";
-echo "<th>"; echo "Telephone"; echo "</th>";
-echo "<th>"; echo "Address"; echo "</th>";
-echo "<th>"; echo "Gender"; echo "</th>";
-echo "<th>"; echo "Status"; echo "</th>";
-echo "<th>"; echo "Approved"; echo "</th>";
-echo "<th>"; echo "Not Approved"; echo "</th>";
+echo "<th>";
+echo "Firstname";
+echo "</th>"; //for heading
+echo "<th>";
+echo "Lastname";
+echo "</th>";
+echo "<th>";
+echo "Username";
+echo "</th>";
+echo "<th>";
+echo "user_number";
+echo "</th>";
+echo "<th>";
+echo "DateOfBirth";
+echo "</th>";
+echo "<th>";
+echo "Email";
+echo "</th>";
+echo "<th>";
+echo "Telephone";
+echo "</th>";
+echo "<th>";
+echo "Address";
+echo "</th>";
+echo "<th>";
+echo "Gender";
+echo "</th>";
+echo "<th>";
+echo "Status";
+echo "</th>";
+echo "<th>";
+echo "Approved";
+echo "</th>";
+echo "<th>";
+echo "Not Approved";
+echo "</th>";
 echo "</tr>";
 
-
-while($row=mysqli_fetch_array($res))
-{
+while ($row = mysqli_fetch_array($res)) {
     echo "<tr>";
-    echo "<td>"; echo $row["FirstName"]; echo "</td>";
-    echo "<td>"; echo $row["LastName"]; echo "</td>";
-    echo "<td>"; echo $row["Username"]; echo "</td>";
-    echo "<td>"; echo $row["user_number"]; echo "</td>";
-    echo "<td>"; echo $row["DateOfBirth"]; echo "</td>";
-    echo "<td>"; echo $row["Email"]; echo "</td>";
-    echo "<td>"; echo $row["Telephone"]; echo "</td>";
-    echo "<td>"; echo $row["Address"]; echo "</td>";
-    echo "<td>"; echo $row["Gender"]; echo "</td>";
-    echo "<td>"; echo $row["Status"]; echo "</td>";
-    echo "<td>"; ?> <a href="approved.php?id=<?php echo $row["User_id"]; ?>">Approved</a> <?php echo "</td>"; 
-    echo "<td>"; ?> <a href="NotApproved.php?id=<?php echo $row["User_id"]; ?>">Not Approved</a> <?php echo "</td>"; 
+    echo "<td>";
+    echo $row["FirstName"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["LastName"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Username"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["user_number"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["DateOfBirth"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Email"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Telephone"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Address"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Gender"];
+    echo "</td>";
+    echo "<td>";
+    echo $row["Status"];
+    echo "</td>";
+    echo "<td>";?> <a href="approved.php?id=<?php echo $row["User_id"]; ?>">Approved</a> <?php echo "</td>";
+    echo "<td>"; ?> <a href="NotApproved.php?id=<?php echo $row["User_id"]; ?>">Not Approved</a> <?php echo "</td>";
     echo "</tr>";
 
-     
-    
 }
-echo "</table>"; 
-                              ?>
+echo "</table>";
+?>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 <?php
 include "dbconfig.php";
-$tot=0;
-$res=mysqli_query($link,"select * from lib_messages where dest_username='$_SESSION[Username]' && read_1='n'");
-$tot=mysqli_num_rows($res);
+$tot = 0;
+$res = mysqli_query($link, "select * from lib_messages where dest_username='$_SESSION[Username]' && read_1='n'");
+$tot = mysqli_num_rows($res);
 
 ?>
 
@@ -46,8 +46,8 @@ $tot=mysqli_num_rows($res);
 
                         <h2>
                         <?php
-                                 echo  $_SESSION["Username"];
-                                ?>
+echo $_SESSION["Username"];
+?>
                         </h2>
                     </div>
                     <div class="clearfix"></div>
@@ -91,7 +91,7 @@ $tot=mysqli_num_rows($res);
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
- 
+
                             <li class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 </li>
@@ -120,8 +120,8 @@ $tot=mysqli_num_rows($res);
                                aria-expanded="false">
                                 <img src="../assets/images/img.jpg" alt="">
                                 <?php
-                                 echo  $_SESSION["Username"];
-                                ?>
+echo $_SESSION["Username"];
+?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
 
@@ -143,8 +143,8 @@ $tot=mysqli_num_rows($res);
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="badge bg-green" onclick="window.location='message_from_librarian.php';">
                                 <!-- this part display the number of notifications-->
-                                <?php echo $tot;?>
-                                
+                                <?php echo $tot; ?>
+
                                 </span>
                             </a>
 
@@ -159,4 +159,3 @@ $tot=mysqli_num_rows($res);
 
 
 
-      

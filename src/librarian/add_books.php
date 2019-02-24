@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if librarian is logged in, if not direct them to login page
-if(!isset($_SESSION["librarian"]))
-{
+if (!isset($_SESSION["librarian"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";
@@ -77,12 +76,12 @@ include "header.php";
                                 <tr>
                                     <td><input type="submit" name="submit1" class="btn btn-defualt" value="insert"></td>
                                 </tr>
-                         
-                            </table>  
-                            </form>  
 
-                           
-                               
+                            </table>
+                            </form>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -91,18 +90,16 @@ include "header.php";
         </div>
         <!-- /page content -->
 <?php
-        if(isset($_POST["submit1"]))
-{
+if (isset($_POST["submit1"])) {
     //this line copies the  image from teh source to the destination folder
-    $tm=md5(time());
-    $frm=$_FILES["f1"]["name"];
-    $dest="../assets/books_img/".$tm.$frm;
-    $dest1="../assets/books_img/".$tm.$frm;
-    move_uploaded_file($_FILES["f1"]["tmp_name"],$dest);
+    $tm = md5(time());
+    $frm = $_FILES["f1"]["name"];
+    $dest = "../assets/books_img/" . $tm . $frm;
+    $dest1 = "../assets/books_img/" . $tm . $frm;
+    move_uploaded_file($_FILES["f1"]["tmp_name"], $dest);
 
-
-    mysqli_query($link,"insert into add_books values('','$_POST[bookName]','$dest1','$_POST[isbn]','$_POST[pages]','$_POST[authorName]','$_POST[pubName]','$_POST[pubDate]','$_POST[bookPrice]','$_POST[bookQty]','$_POST[avalaibleQty]',' $_SESSION[librarian]')");
-?>
+    mysqli_query($link, "insert into add_books values('','$_POST[bookName]','$dest1','$_POST[isbn]','$_POST[pages]','$_POST[authorName]','$_POST[pubName]','$_POST[pubDate]','$_POST[bookPrice]','$_POST[bookQty]','$_POST[avalaibleQty]',' $_SESSION[librarian]')");
+    ?>
  <script type="text/javascript">
  alert("book succesfully uploaded");
  </script>

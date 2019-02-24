@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if librarian is logged in, if not direct them to login page
-if(!isset($_SESSION["librarian"]))
-{
+if (!isset($_SESSION["librarian"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";
@@ -55,85 +54,165 @@ include "header.php";
 
 
 <?php
-if(isset($_POST["submit1"]))
-{
-    $res=mysqli_query($link, "select * from add_books where title like ('$_POST[t1]%')");
+if (isset($_POST["submit1"])) {
+    $res = mysqli_query($link, "select * from add_books where title like ('$_POST[t1]%')");
     echo "<table class='table table-bordered'>";
-    
+
     echo "<tr>";
-    echo "<th>"; echo "Image"; echo "</th>";
-    echo "<th>"; echo "Title"; echo "</th>";
-    echo "<th>"; echo "ISBN"; echo "</th>";
-    echo "<th>"; echo "Pages"; echo "</th>";
-    echo "<th>"; echo "Author Name"; echo "</th>";
-    echo "<th>"; echo "Publisher Name"; echo "</th>";
-    echo "<th>"; echo "Publish Date"; echo "</th>";
-    echo "<th>"; echo "Purchase Date"; echo "</th>";
-    echo "<th>"; echo "Price"; echo "</th>";
-    echo "<th>"; echo "Quantity"; echo "</th>";
-    echo "<th>"; echo "Delete books"; echo "</th>";
+    echo "<th>";
+    echo "Image";
+    echo "</th>";
+    echo "<th>";
+    echo "Title";
+    echo "</th>";
+    echo "<th>";
+    echo "ISBN";
+    echo "</th>";
+    echo "<th>";
+    echo "Pages";
+    echo "</th>";
+    echo "<th>";
+    echo "Author Name";
+    echo "</th>";
+    echo "<th>";
+    echo "Publisher Name";
+    echo "</th>";
+    echo "<th>";
+    echo "Publish Date";
+    echo "</th>";
+    echo "<th>";
+    echo "Purchase Date";
+    echo "</th>";
+    echo "<th>";
+    echo "Price";
+    echo "</th>";
+    echo "<th>";
+    echo "Quantity";
+    echo "</th>";
+    echo "<th>";
+    echo "Delete books";
+    echo "</th>";
     echo "</tr>";
-    
-    while($row=mysqli_fetch_array($res)){
+
+    while ($row = mysqli_fetch_array($res)) {
         echo "<tr>";
-        echo "<td>"; ?> <img src="<?php echo $row["book_img"]  ?>" height="100" width="100"> <?php ; echo "</td>";
-        echo "<td>"; echo $row["title"]; echo "</td>";
-        echo "<td>"; echo $row["ISBN"]; echo "</td>";
-        echo "<td>"; echo $row["pages"]; echo "</td>";
-        echo "<td>"; echo $row["author_name"]; echo "</td>";
-        echo "<td>"; echo $row["publisher_name"]; echo "</td>";
-        echo "<td>"; echo $row["publish_date"]; echo "</td>";
-        echo "<td>"; echo $row["purchase_date"]; echo "</td>";
-        echo "<td>"; echo $row["book_price"]; echo "</td>";
-        echo "<td>"; echo $row["book_qty"]; echo "</td>";
-        echo "<td>"; 
-        ?>
-    <a href="delete_books.php?id=<?php echo $row["book_id"];  ?>">Delete books </a>
-        <?php
+        echo "<td>";?> <img src="<?php echo $row["book_img"] ?>" height="100" width="100"> <?php ;
         echo "</td>";
+        echo "<td>";
+        echo $row["title"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["ISBN"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["pages"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["author_name"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["publisher_name"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["publish_date"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["purchase_date"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["book_price"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["book_qty"];
+        echo "</td>";
+        echo "<td>";
+        ?>
+    <a href="delete_books.php?id=<?php echo $row["book_id"]; ?>">Delete books </a>
+        <?php
+echo "</td>";
         echo "</tr>";
     }
     echo "</table>";
-}
-else{
+} else {
 
-$res=mysqli_query($link, "select * from add_books");
-echo "<table class='table table-bordered'>";
+    $res = mysqli_query($link, "select * from add_books");
+    echo "<table class='table table-bordered'>";
 
-echo "<tr>";
-echo "<th>"; echo "Image"; echo "</th>";
-echo "<th>"; echo "Title"; echo "</th>";
-echo "<th>"; echo "ISBN"; echo "</th>";
-echo "<th>"; echo "Pages"; echo "</th>";
-echo "<th>"; echo "Author Name"; echo "</th>";
-echo "<th>"; echo "Publisher Name"; echo "</th>";
-echo "<th>"; echo "Publish Date"; echo "</th>";
-echo "<th>"; echo "Purchase Date"; echo "</th>";
-echo "<th>"; echo "Price"; echo "</th>";
-echo "<th>"; echo "Quantity"; echo "</th>";
-echo "<th>"; echo "Delete books"; echo "</th>";
-echo "</tr>";
-
-while($row=mysqli_fetch_array($res)){
     echo "<tr>";
-    echo "<td>"; ?> <img src="<?php echo $row["book_img"]  ?>" height="100" width="100"> <?php ; echo "</td>";
-    echo "<td>"; echo $row["title"]; echo "</td>";
-    echo "<td>"; echo $row["ISBN"]; echo "</td>";
-    echo "<td>"; echo $row["pages"]; echo "</td>";
-    echo "<td>"; echo $row["author_name"]; echo "</td>";
-    echo "<td>"; echo $row["publisher_name"]; echo "</td>";
-    echo "<td>"; echo $row["publish_date"]; echo "</td>";
-    echo "<td>"; echo $row["purchase_date"]; echo "</td>";
-    echo "<td>"; echo $row["book_price"]; echo "</td>";
-    echo "<td>"; echo $row["book_qty"]; echo "</td>";
-    echo "<td>"; 
-    ?>
-<a href="delete_books.php?id=<?php echo $row["book_id"];  ?>">Delete books </a>
-    <?php
-    echo "</td>";
+    echo "<th>";
+    echo "Image";
+    echo "</th>";
+    echo "<th>";
+    echo "Title";
+    echo "</th>";
+    echo "<th>";
+    echo "ISBN";
+    echo "</th>";
+    echo "<th>";
+    echo "Pages";
+    echo "</th>";
+    echo "<th>";
+    echo "Author Name";
+    echo "</th>";
+    echo "<th>";
+    echo "Publisher Name";
+    echo "</th>";
+    echo "<th>";
+    echo "Publish Date";
+    echo "</th>";
+    echo "<th>";
+    echo "Purchase Date";
+    echo "</th>";
+    echo "<th>";
+    echo "Price";
+    echo "</th>";
+    echo "<th>";
+    echo "Quantity";
+    echo "</th>";
+    echo "<th>";
+    echo "Delete books";
+    echo "</th>";
     echo "</tr>";
-}
-echo "</table>";
+
+    while ($row = mysqli_fetch_array($res)) {
+        echo "<tr>";
+        echo "<td>"; ?> <img src="<?php echo $row["book_img"] ?>" height="100" width="100"> <?php ;
+        echo "</td>";
+        echo "<td>";
+        echo $row["title"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["ISBN"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["pages"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["author_name"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["publisher_name"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["publish_date"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["purchase_date"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["book_price"];
+        echo "</td>";
+        echo "<td>";
+        echo $row["book_qty"];
+        echo "</td>";
+        echo "<td>";
+        ?>
+<a href="delete_books.php?id=<?php echo $row["book_id"]; ?>">Delete books </a>
+    <?php
+echo "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
 }
 ?>
 

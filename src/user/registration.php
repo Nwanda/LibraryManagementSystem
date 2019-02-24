@@ -17,7 +17,7 @@ include "dbconfig.php";
     <link href="../css/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/css/custom.min.css" rel="stylesheet">
     <link href="/css/css/animate.min.css" rel="stylesheet">
-    
+
 </head>
 
 <br>
@@ -75,11 +75,10 @@ include "dbconfig.php";
                 </form>
             </section>
 <?php
-if(isset($_POST["submit1"]))
-{
-    
-    mysqli_query($link,"insert into user_registration values('','$_POST[FirstName]','$_POST[LastName]','$_POST[Username]','$_POST[Password]','$_POST[DateOfBirth]','$_POST[Email]','$_POST[Telephone]','$_POST[Address]','$_POST[Gender]','no','$_POST[user_number]')");
-?>
+if (isset($_POST["submit1"])) {
+
+    mysqli_query($link, "insert into user_registration values('','$_POST[FirstName]','$_POST[LastName]','$_POST[Username]','$_POST[Password]','$_POST[DateOfBirth]','$_POST[Email]','$_POST[Telephone]','$_POST[Address]','$_POST[Gender]','no','$_POST[user_number]')");
+    ?>
  <div class="alert alert-success col-lg-6 col-lg-push-3">
         Registration successfully, You will get email when your account is approved
     </div>
@@ -91,7 +90,7 @@ if(isset($_POST["submit1"]))
 
     </div>
 
-   
+
 
 
 </body>

@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if user is logged in, if not direct them to login page
-if(!isset($_SESSION["Username"]))
-{
+if (!isset($_SESSION["Username"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";
@@ -58,63 +57,56 @@ include "header.php";
 
                                 <?php
 
-
-if(isset($_POST["submit1"])){
-    $rowNumber=0;
-    $res=mysqli_query($link,"select * from add_books where title like ('%$_POST[t1]%')");
+if (isset($_POST["submit1"])) {
+    $rowNumber = 0;
+    $res = mysqli_query($link, "select * from add_books where title like ('%$_POST[t1]%')");
     echo "<table class='table table-bordered'>";
     echo "<tr>";
-    while($row=mysqli_fetch_array($res))
-    {$rowNumber=$rowNumber+1;
+    while ($row = mysqli_fetch_array($res)) {$rowNumber = $rowNumber + 1;
         echo "<td>";
-    ?> <img src="<?php echo $row["book_img"]; ?>" height="100" width="100">  <?php
-    echo "<br>";
-    echo "<b>".$row["title"]."</b>";
-    echo "<br>";
-    echo "<b>"."Available".$row["book_qty"]."</b>";
-    if($rowNumber==4)
-    {
-        echo "</tr>";
-        echo "<tr>";
-        $rowNumber=0;
-    }
-    
+        ?> <img src="<?php echo $row["book_img"]; ?>" height="100" width="100">  <?php
+echo "<br>";
+        echo "<b>" . $row["title"] . "</b>";
+        echo "<br>";
+        echo "<b>" . "Available" . $row["book_qty"] . "</b>";
+        if ($rowNumber == 4) {
+            echo "</tr>";
+            echo "<tr>";
+            $rowNumber = 0;
+        }
+
         echo "</td>";
-    
+
     }
     echo "</tr>";
     echo "</table>";
-    
-}
-else{
-    $rowNumber=0;
-    $res=mysqli_query($link,"select * from add_books ");
+
+} else {
+    $rowNumber = 0;
+    $res = mysqli_query($link, "select * from add_books ");
     echo "<table class='table table-bordered'>";
     echo "<tr>";
-    while($row=mysqli_fetch_array($res))
-    {$rowNumber=$rowNumber+1;
+    while ($row = mysqli_fetch_array($res)) {$rowNumber = $rowNumber + 1;
         echo "<td>";
-    ?> <img src="<?php echo $row["book_img"]; ?>" height="100" width="100">  <?php
-    echo "<br>";
-    echo "<b>".$row["title"]."</b>";
-    echo "<br>";
-    echo "<b>"."Available".$row["book_qty"]."</b>";
-    if($rowNumber==4)
-    {
-        echo "</tr>";
-        echo "<tr>";
-        $rowNumber=0;
-    }
-    
+        ?> <img src="<?php echo $row["book_img"]; ?>" height="100" width="100">  <?php
+echo "<br>";
+        echo "<b>" . $row["title"] . "</b>";
+        echo "<br>";
+        echo "<b>" . "Available" . $row["book_qty"] . "</b>";
+        if ($rowNumber == 4) {
+            echo "</tr>";
+            echo "<tr>";
+            $rowNumber = 0;
+        }
+
         echo "</td>";
-    
+
     }
     echo "</tr>";
     echo "</table>";
-    
+
 }
 
-                               
 ?>
                             </div>
                         </div>

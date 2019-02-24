@@ -1,2 +1,54 @@
 body {
-  background: red; }
+  background: #E7E7E7;
+  background: url("../assets/images/homepage_bkg.jpg") no-repeat;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.carousel {
+  position: relative;
+  height: 100px !important;
+  background-color: #5E9BCA; }
+
+#nav_bar {
+  margin-top: -25px; }
+
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+  background-color: #9CA1A7;
+  overflow-x: hidden;
+  padding-top: 16px; }
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  display: block; }
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #f1f1f1; }
+
+.Find-in-catolog {
+  background-color: #5E9BCA; }
+
+.advance-search {
+  float: left;
+  margin-right: 20px; }
+
+.search-help {
+  margin-right: 20px; }
+
+#journals {
+  background-color: #084468;
+  max-width: 55%;
+  margin-top: 5px;
+  font-size: .9em; }
+
+.Find-in-catolog p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: white; }

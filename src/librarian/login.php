@@ -67,33 +67,29 @@ include "dbconfig.php";
 
 </div>
 <?php
-if(isset($_POST["submit1"]))
-{
-    $count=0;
-    $res=mysqli_query($link,"select * from librarian_registration where Username='$_POST[Username]' && Password='$_POST[Password]'");
-    $count=mysqli_num_rows($res);
+if (isset($_POST["submit1"])) {
+    $count = 0;
+    $res = mysqli_query($link, "select * from librarian_registration where Username='$_POST[Username]' && Password='$_POST[Password]'");
+    $count = mysqli_num_rows($res);
     echo $count;
 
-    if($count==0)
-    {
+    if ($count == 0) {
         ?>
             <div class="alert alert-danger col-lg-6 col-lg-push-3">
                 <strong style="color:white">Invalid</strong> Username Or Password.
             </div>
         <?php
-    }
-    else{
+} else {
         //session name is librarian
-        $_SESSION["librarian"]=$_POST["Username"];
-    
-            ?>
+        $_SESSION["librarian"] = $_POST["Username"];
+
+        ?>
                 <script type="text/javascript">
                     window.location="librarian_home_page.php";
                 </script>
             <?php
-    }
 }
-
+}
 
 ?>
 

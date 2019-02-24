@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if user is logged in, if not direct them to login page
-if(!isset($_SESSION["Username"]))
-{
+if (!isset($_SESSION["Username"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";

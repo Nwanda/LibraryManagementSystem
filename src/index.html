@@ -1,19 +1,182 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-    <head>
-        <title>Bootstrap 4 Layout</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
+<head>
+    <title>Library Management System</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <body>
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <main role="main">
+
+        <div class="carousel">
+
+
+        </div>
+        <div class="container" id="nav_bar">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FIND</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">USING THE LIBRARY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">GET HELP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ABOUT US</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="http://localhost/LibraryManagementSystem/LibraryManagementSystem/src/login_select.html">LOGIN</a>
+                        </li>
+
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                LOGIN
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                    href="http://localhost/LibraryManagementSystem/LibraryManagementSystem/src/user/login.php">User
+                                    Login</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/LibraryManagementSystem/LibraryManagementSystem/src/librarian/login.php">Librarian
+                                    Login</a>
+                                <a class="dropdown-item" href="#">Admin Login</a>
+
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+
+        </div>
+
+        <div class="container mt-4">
+
+            <div class="row">
+                <!--The left column-->
+                <div class="col-md-2">
+                    <!-- The sidebar -->
+                    <div class="sidebar">
+                        <h6 class="card-title">ASK A LIBRARIAN</h6>
+                        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+                        <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+                        <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+                        <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+                    </div>
+
+
+                </div>
+
+
+                <!--The middle column-->
+                <div class="col-md-7">
+
+                    <div class="Find-in-catolog pl-2 pb-3">
+                        <div class="row">
+                            <div class="col-md-5 ">
+                                <p>FIND IN OUR CATALOGS</p>
+                            </div>
+
+                            <div class="col-md-7" id="journals">
+                                <p>JOURNALS, ARTICLES & DATABASES</p>
+                            </div>
+                        </div>
+
+
+                        <div class="-search mb-4 ">
+                            <p>Choose a catalogue to search</p>
+                        </div>
+
+                        <div class="search-container  mb-4">
+
+                            <form action="/action_page.php">
+                                <input type="text" placeholder="Search our catalog" name="search" style="width: 35rem;">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+
+
+                        <div id="search">
+                            <div class="advance-search">
+                                <p>Advanced Search</p>
+                            </div>
+
+                            <div class="search-help">
+                                <p>Search Help</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--The right column-->
+                <div class="col-md-3">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">HAPPENING NOW</h5>
+                            <a href="#" class="card-link">FACEBOOK</a>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
 </html>

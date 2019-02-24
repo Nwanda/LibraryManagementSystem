@@ -1,8 +1,7 @@
 <?php
 session_start();
 //check if librarian is logged in, if not direct them to login page
-if(!isset($_SESSION["librarian"]))
-{
+if (!isset($_SESSION["librarian"])) {
     ?>
 <script type="text/javascript">
 window.location="login.php";
@@ -42,28 +41,27 @@ include "header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                             
+
                             <form name="form" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>
                                     <select class="form-control" name="dest_user">
-                                    
-                                    <?php
-$res=mysqli_query($link,"select * from user_registration");
-while($row=mysqli_fetch_array($res)){
 
-   ?><option value="<?php echo $row["Username"]?>">
+                                    <?php
+$res = mysqli_query($link, "select * from user_registration");
+while ($row = mysqli_fetch_array($res)) {
+
+    ?><option value="<?php echo $row["Username"] ?>">
 <?php
-echo $row["Username"]."(".$row["user_number"].")";
-?>
+echo $row["Username"] . "(" . $row["user_number"] . ")";
+    ?>
 
    </option><?php
 }
 
+?>
 
-                                    ?>
-                                    
                                     </select>
                                     </td>
                                 </tr>
@@ -93,10 +91,9 @@ echo $row["Username"]."(".$row["user_number"].")";
         </div>
         <!-- /page content -->
 <?php
-if(isset($_POST["submit1"]))
-{
-mysqli_query($link,"insert into lib_messages values('','$_SESSION[librarian]','$_POST[dest_user]','$_POST[subject]','$_POST[msg]','n')") or die(mysqli_error($link)) ;
-?>
+if (isset($_POST["submit1"])) {
+    mysqli_query($link, "insert into lib_messages values('','$_SESSION[librarian]','$_POST[dest_user]','$_POST[subject]','$_POST[msg]','n')") or die(mysqli_error($link));
+    ?>
 
 <script type="text/javascript">
 alert("message sent succesfully");
