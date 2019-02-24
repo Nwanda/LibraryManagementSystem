@@ -16,7 +16,7 @@ $tot = mysqli_num_rows($res);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>User home Page | LMS </title>
+    <title>User home Page </title>
 
 
     <link href="../css/css/bootstrap.min.css" rel="stylesheet">
